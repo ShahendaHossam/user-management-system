@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+
     /**
      * Write code on Method
      *
@@ -28,6 +29,7 @@ class AuthController extends Controller
      */
     public function registration()
     {
+
         return view('auth.register');
     }
 
@@ -67,7 +69,7 @@ class AuthController extends Controller
         ]);
 
         $data = $request->all();
-        $check = $this->create($data);
+        $this->create($data);
 
         return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
     }
@@ -79,11 +81,20 @@ class AuthController extends Controller
      */
     public function dashboard()
     {
-        if (Auth::check()) {
-            return view('home');
-        }
 
-        return redirect("login")->withSuccess('Opps! You do not have access');
+        switch (auth()->user()->role) {
+            case 'user':
+                return redirect()->route('user.dashboard');
+                break;
+
+            case 'admin':
+                return redirect()->route('admin.dashboard');
+                break;
+
+            default:
+            return redirect()->route('login');
+                break;
+        }
     }
 
     /**
