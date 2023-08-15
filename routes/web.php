@@ -33,7 +33,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::get('user', UserList::class)->name('user.index');
-Route::get('user/create', UserForm::class)->name('user.create');
+// Route::get('user/create', UserForm::class)->name('user.create');
 Route::get('user/edit/{user}', UserForm::class)->name('user.edit');
 
 
