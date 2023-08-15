@@ -4,6 +4,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Livewire\Users\UserForm;
+use App\Http\Livewire\Users\UserList;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,10 @@ Route::get('registration', [AuthController::class, 'registration'])->name('regis
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::get('user', UserList::class)->name('user.index');
+Route::get('user/create', UserForm::class)->name('user.create');
+Route::get('user/edit/{user}', UserForm::class)->name('user.edit');
+
+
