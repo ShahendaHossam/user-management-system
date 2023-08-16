@@ -52,6 +52,6 @@ You can now access the server at http://localhost:8000
 
 The credential for this system is:
 
-email: admin
+email: admin@gmail.com
 
 password: admin123
