@@ -1,21 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-    <h5 class="card-header">User Details</h5>
-    <div class="card-body">
-        <div class="form-group">
-            <label for="exampleInputEmail1">ID</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$user->id}}">
+    <div class="bg-light p-4 rounded">
+        <h1>Show user</h1>
+        <div class="lead">
+            
         </div>
-        <div class="form-group">
-            <label for="user_name">Name</label>
-            <input type="text" class="form-control" id="user_name" value="{{$user->name}}">
+        
+        <div class="container mt-4">
+            <div>
+                Name: {{ $user->name }}
+            </div>
+            <div>
+                Email: {{ $user->email }}
+            </div>
         </div>
-        <div class="form-group">
-            <label for="user_email">Email</label>
-            <input type="text" class="form-control" id="user_email" value="{{$user->email}}">
-        </div>
+
     </div>
-</div>
+    <div class="mt-4">
+        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-info">Edit</a>
+        <a href="{{ route('user.index') }}" class="btn btn-default">Back</a>
+    </div>
 @endsection
