@@ -39,7 +39,7 @@ Command To Generate Laravel Permissions
 
     php artisan permission:create-permission-routes
 
-Add User Admin Seeder
+Command To Run User Admin Seeder
 
     php artisan make:seeder CreateAdminUserSeeder
 
