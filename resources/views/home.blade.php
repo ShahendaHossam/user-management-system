@@ -1,6 +1,8 @@
 @extends('layouts.app')
   
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,7 +16,8 @@
                         </div>
                     @endif
   
-                    You are Logged In
+                    <p>Hello There! Welcome to Dashboard</p>
+
                 </div>
             </div>
         </div>
