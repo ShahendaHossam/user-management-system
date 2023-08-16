@@ -71,7 +71,7 @@ class AuthController extends Controller
         $data = $request->all();
         $this->create($data);
 
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("login")->withSuccess('Great! You have Successfully loggedin');
     }
 
     /**
@@ -82,19 +82,21 @@ class AuthController extends Controller
     public function dashboard()
     {
 
-        switch (auth()->user()->role) {
-            case 'user':
-                return redirect()->route('user.dashboard');
-                break;
+        // switch (auth()->user()->role) {
+        //     case 'user':
+        //         return redirect()->route('user.dashboard');
+        //         break;
 
-            case 'admin':
-                return redirect()->route('admin.dashboard');
-                break;
+        //     case 'admin':
+        //         return redirect()->route('admin.dashboard');
+        //         break;
 
-            default:
-            return redirect()->route('login');
-                break;
-        }
+        //     default:
+        //     return redirect()->route('login');
+        //         break;
+        // }
+
+        return redirect()->route('home.index');
     }
 
     /**

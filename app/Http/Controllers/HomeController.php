@@ -16,21 +16,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function __invoke(Request $request)
-    {
-        switch (auth()->user()->role) {
-            case 'user':
-                return redirect()->route('user.dashboard');
-                break;
-
-            case 'admin':
-                return redirect()->route('admin.dashboard');
-                break;
-
-            default:
-            return redirect()->route('login');
-                break;
-        }
-    }
 }

@@ -5,6 +5,24 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style type="text/css">
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .float-right {
+            float: right;
+        }
+
         body {
             margin: 0;
             font-size: .9rem;
@@ -46,12 +64,17 @@
             margin-right: 0;
         }
     </style>
+        <!-- Custom styles for this template -->
+        <link href="{!! url('assets/css/app.css') !!}" rel="stylesheet">
+
     @livewireStyles
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+@include('layouts.partials.navbar')
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="#">Laravel</a>
             <a class="navbar-brand" href="{{route('user.index')}}">User Management System</a>
@@ -78,10 +101,10 @@
             </div>
 
         </div>
-    </nav>
-    <div class="container">
+    </nav> -->
+    <main class="container">
         @yield('content')
-    </div>
+    </main>
     @livewireScripts
 </body>
 
